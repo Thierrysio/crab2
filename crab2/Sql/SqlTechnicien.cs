@@ -9,9 +9,9 @@ using Newtonsoft.Json;
 
 namespace crab2.Sql
 {
-    public static  class SqlTechnicien
+    public static class SqlTechnicien
     {
-        public static Technicien FindId (int param)
+        public static Technicien FindId(int param)
         {
             Technicien resultat = null;
 
@@ -23,12 +23,23 @@ namespace crab2.Sql
 
                 string selectQuery = @"SELECT JSON_OBJECT('Matricule', Matricule, 'Nom', Nom, 'Prenom', Prenom) 
                                    FROM Technicien
-                                   WHERE Id = @Param";
+                                   WHERE Id = @param";
 
-                /////////code/////////////
-
+                using (MySqlCommand cmd = new MySqlCommand(selectQuery, connection))
+                {
+                    cmd.Parameters.AddWithValue("@param", param);
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string userJson = reader.GetString(0);  // considering the JSON is in the first column
+                            //usersJsonList.Add(userJson);
+                        }
+                    }
+                }
             }
             return resultat;
+            }
         }
     }
-}
+
