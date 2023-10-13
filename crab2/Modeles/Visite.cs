@@ -45,7 +45,22 @@ namespace crab2.Modeles
 
         #region Methodes
 
-        // Vous pouvez ajouter des méthodes spécifiques à la classe ici.
+        // Je veux savoir si la borne 12 fait partie de la visite
+        public bool GetBornePrecise(int param)
+        {
+            bool resultat = false;
+            foreach(Borne uneBorne in this.LesBornes)
+            {
+                if(uneBorne.IdBorne == param)
+                { 
+                    resultat = true; 
+                    return resultat; 
+                }
+            }
+
+            return resultat;
+
+        }
 
         #endregion
     }

@@ -46,6 +46,23 @@ namespace crab2.Modeles
 
         #region Methodes
 
+        public TypeBorne GetMonTypeBorne()
+        { 
+            TypeBorne resultat = null;
+
+            resultat = this.LeType;
+        
+            return resultat;
+        }
+
+        public int GetCodeTypeBorne()
+        {
+            int resultat = 0;
+            resultat = this.LeType.CodeTypeBorne;
+            return resultat;
+
+        }
+
         // Vous pouvez ajouter des méthodes spécifiques à la classe ici.
 
         #endregion
