@@ -15,6 +15,7 @@ namespace crab2.Modeles
         private int _idStation;
         private string _libelleEmplacement;
 
+
         #endregion
 
         #region Constructeurs

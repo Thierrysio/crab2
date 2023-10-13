@@ -15,18 +15,20 @@ namespace crab2.Modeles
         private string _etat;
         private int _dureeTotale;
         private List<Borne> _lesBornes;
+        private Station _laStation;
 
         #endregion
 
         #region Constructeurs
 
-        public Visite(string etat, int dureeTotale)
+        public Visite(string etat, int dureeTotale, Station laStation)
         {
             _etat = etat;
             _dureeTotale = dureeTotale;
             _lesBornes = new List<Borne>();
-
+            _laStation = laStation;
             Visite.CollClasse.Add(this);
+            
         }
 
         #endregion
@@ -35,7 +37,7 @@ namespace crab2.Modeles
 
         public string Etat { get => _etat; set => _etat = value; }
         public int DureeTotale { get => _dureeTotale; set => _dureeTotale = value; }
-
+        public Station LaStation { get => _laStation; set => _laStation = value; }
         public List<Borne> LesBornes { get => _lesBornes; }
 
 
