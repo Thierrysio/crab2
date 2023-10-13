@@ -17,6 +17,11 @@ namespace crab2.Sql
 
             string connectionString = "Server=localhost;UserId=root;Password=;Database=Crab2";
 
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string selectQuery = @"";
 
 
             return resultat;
