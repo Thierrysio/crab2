@@ -21,9 +21,13 @@ namespace crab2.Sql
             {
                 connection.Open();
 
-                string selectQuery = @"";
+                string selectQuery = @"SELECT JSON_OBJECT('Id', Id, 'Nom', Nom, 'Email', Email) 
+                                   FROM User
+                                   WHERE Nom = @Nom";
 
+                /////////code/////////////
 
+            }
             return resultat;
         }
     }
