@@ -13,9 +13,9 @@ namespace crab2.Sql
     {
         public static Technicien FindId (int param)
         {
-             Technicien resultat = null;
+            Technicien resultat = null;
 
-            string connectionString = "Server=localhost;UserId=root;Password=;Database=MaNouvelleBaseMySQL";
+            string connectionString = "Server=localhost;UserId=root;Password=;Database=Crab2";
 
 
 
