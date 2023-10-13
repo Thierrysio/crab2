@@ -14,7 +14,7 @@ namespace crab2.Modeles
 
         private int _idStation;
         private string _libelleEmplacement;
-
+        private List<Borne> _lesBornes;
 
         #endregion
 
@@ -24,6 +24,7 @@ namespace crab2.Modeles
         {
             _idStation = idStation;
             _libelleEmplacement = libelleEmplacement;
+            _lesBornes = new List<Borne>();
 
             Station.CollClasse.Add(this);
         }
@@ -34,7 +35,7 @@ namespace crab2.Modeles
 
         public int IdStation { get => _idStation; set => _idStation = value; }
         public string LibelleEmplacement { get => _libelleEmplacement; set => _libelleEmplacement = value; }
-
+        public List<Borne> LesBornes { get => _lesBornes;}
         #endregion
 
         #region Methodes

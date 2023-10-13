@@ -11,10 +11,12 @@ namespace crab2.Modeles
         #region Attributs
 
         public static List<Maintenance> CollClasse = new List<Maintenance>();
-
+        private List<Station> _lesStations;
+        private List<Visite> _lesVisites;
+        private List<Technicien> _lesTechniciens;
         // Attributs de la classe Maintenance - À modifier selon vos besoins
         // Exemple d'attribut
-                                     // Ajoutez d'autres attributs ici...
+        // Ajoutez d'autres attributs ici...
 
         #endregion
 
@@ -24,6 +26,9 @@ namespace crab2.Modeles
         {
            
             Maintenance.CollClasse.Add(this);
+            _lesStations = new List<Station>();
+            _lesVisites = new List<Visite>();
+            _lesTechniciens = new List<Technicien>();
         }
 
         // Vous pouvez ajouter d'autres constructeurs si nécessaire...
@@ -33,6 +38,10 @@ namespace crab2.Modeles
         #region Getters/Setters
 
         // Ajoutez d'autres getters/setters ici...
+        public List<Station> LesStations { get => _lesStations; }
+        public List<Visite> LesVisites { get => _lesVisites; }
+        public List<Technicien> LesTechniciens { get => _LesTechniciens; }
+
 
         #endregion
 
