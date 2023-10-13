@@ -16,18 +16,20 @@ namespace crab2.Modeles
         private int _idBorne;
         private DateTime _dateDerniereRevision;
         private int _indiceCompteurUnites;
+        private TypeBorne _leType;
 
         #endregion
 
         #region Constructeurs
 
-        public Borne(int idBorne, DateTime dateDerniereRevision, int indiceCompteurUnites)
+        public Borne(int idBorne, DateTime dateDerniereRevision, int indiceCompteurUnites, TypeBorne leType)
         {
             _idBorne = idBorne;
             _dateDerniereRevision = dateDerniereRevision;
             _indiceCompteurUnites = indiceCompteurUnites;
-
+            _leType = leType;
             Borne.CollClasse.Add(this);
+            
         }
 
         #endregion
@@ -37,6 +39,8 @@ namespace crab2.Modeles
         public int IdBorne { get => _idBorne; set => _idBorne = value; }
         public DateTime DateDerniereRevision { get => _dateDerniereRevision; set => _dateDerniereRevision = value; }
         public int IndiceCompteurUnites { get => _indiceCompteurUnites; set => _indiceCompteurUnites = value; }
+        public TypeBorne LeType { get => _leType; set => _leType = value; }
+
 
         #endregion
 
