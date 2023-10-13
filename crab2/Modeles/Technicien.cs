@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace crab2.Modeles
 {
-    internal class Technicien
+    public  class Technicien
     {
         #region Attributs
 
