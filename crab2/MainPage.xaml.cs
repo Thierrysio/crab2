@@ -1,5 +1,6 @@
 ﻿using crab2.Modeles;
 using crab2.Sql;
+using crab2.Vues;
 
 namespace crab2
 {
@@ -30,6 +31,11 @@ namespace crab2
                 PrenomLabel.Text = "Prénom: ";
                 DisplayAlert("Erreur", "Technicien non trouvé!", "OK");
             }
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TechniciensPage());
         }
     }
 }

@@ -28,6 +28,10 @@
             <Label x:Name="PrenomLabel" 
                Text="Prénom: " />
 
+            <!-- Bouton de recherche -->
+            <Button Text="Listing" 
+    Clicked="Button_Clicked" />
+
         </VerticalStackLayout>
     </ScrollView>
 
