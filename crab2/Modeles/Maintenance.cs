@@ -40,7 +40,7 @@ namespace crab2.Modeles
         // Ajoutez d'autres getters/setters ici...
         public List<Station> LesStations { get => _lesStations; }
         public List<Visite> LesVisites { get => _lesVisites; }
-        public List<Technicien> LesTechniciens { get => _LesTechniciens; }
+        public List<Technicien> LesTechniciens { get => _lesTechniciens; }
 
 
         #endregion

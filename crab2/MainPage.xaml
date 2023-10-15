@@ -9,31 +9,24 @@
             Padding="30,0"
             VerticalOptions="Center">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+            <!-- Zone de saisie pour le nom -->
+            <Entry x:Name="NomEntry" 
+               Placeholder="Entrez le nom du technicien" 
+               WidthRequest="250" />
 
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+            <!-- Bouton de recherche -->
+            <Button Text="Rechercher" 
+                Clicked="OnSearchButtonClicked" />
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+            <!-- Labels pour afficher les détails du technicien -->
+            <Label x:Name="MatriculeLabel" 
+               Text="Matricule: " />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+            <Label x:Name="NomLabel" 
+               Text="Nom: " />
+
+            <Label x:Name="PrenomLabel" 
+               Text="Prénom: " />
 
         </VerticalStackLayout>
     </ScrollView>
