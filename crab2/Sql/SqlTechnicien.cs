@@ -32,5 +32,62 @@ namespace crab2.Sql
             }
             return resultat;
         }
+
+        public static List<Technicien> FindAll()
+        {
+            List<Technicien> techniciensList = new List<Technicien>();
+            string connectionString = "Server=localhost;UserId=root;Password=;Database=Crab2";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string selectQuery = @"SELECT JSON_OBJECT('Matricule', Matricule, 'Nom', Nom, 'Prenom', Prenom) 
+                               FROM Technicien";
+
+                using (MySqlCommand cmd = new MySqlCommand(selectQuery, connection))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string technicienJson = reader.GetString(0);
+                            Technicien technicien = JsonConvert.DeserializeObject<Technicien>(technicienJson);
+                            techniciensList.Add(technicien);
+                        }
+                    }
+                }
+            }
+            return techniciensList;
+        }
+        public static Technicien FindNom(string nom)
+        {
+            Technicien resultat = null;
+
+            string connectionString = "Server=localhost;UserId=root;Password=;Database=Crab2";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string selectQuery = @"SELECT JSON_OBJECT('Matricule', Matricule, 'Nom', Nom, 'Prenom', Prenom) 
+                               FROM Technicien
+                               WHERE Nom = @nom";
+
+                using (MySqlCommand cmd = new MySqlCommand(selectQuery, connection))
+                {
+                    cmd.Parameters.AddWithValue("@nom", nom);
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string userJson = reader.GetString(0);  // considering the JSON is in the first column
+                            resultat = JsonConvert.DeserializeObject<Technicien>(userJson);
+                        }
+                    }
+                }
+            }
+            return resultat;
+        }
     }
 }
