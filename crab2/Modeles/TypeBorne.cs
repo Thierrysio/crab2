@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace crab2.Modeles
 {
-    internal class TypeBorne
+    public class TypeBorne
     {
         #region Attributs
 

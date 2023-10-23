@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace crab2.Modeles
 {
-    internal class Borne
+    public class Borne
     {
 
         #region Attributs
@@ -30,7 +30,7 @@ namespace crab2.Modeles
             _indiceCompteurUnites = indiceCompteurUnites;
             _leType = leType;
             Borne.CollClasse.Add(this);
-            
+
         }
 
         #endregion
@@ -48,11 +48,11 @@ namespace crab2.Modeles
         #region Methodes
 
         public TypeBorne GetMonTypeBorne()
-        { 
+        {
             TypeBorne resultat = null;
 
             resultat = this.LeType;
-        
+
             return resultat;
         }
 
@@ -73,8 +73,19 @@ namespace crab2.Modeles
             // calcul de la difference de temps entre aujourd'hui et la ldate de la derniere revision
             TimeSpan dureeDepuisDerniereRevision = DateTime.Now - this.DateDerniereRevision;
 
-            if(dureeDepuisDerniereRevision.TotalDays > this.LeType.NbJoursEntreRevisions)
+            if (dureeDepuisDerniereRevision.Days > this.LeType.NbJoursEntreRevisions)
+            {
+                resultat = true;
+            }
 
+            // deuxiemes cas
+
+            // calcul par unites
+
+            if (this.IndiceCompteurUnites > this.LeType.NbUnitesEntreRevisions)
+            {
+                resultat = true;
+            }
 
             return resultat;
         }
