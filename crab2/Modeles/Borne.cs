@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,7 +64,20 @@ namespace crab2.Modeles
 
         }
 
-        // Vous pouvez ajouter des méthodes spécifiques à la classe ici.
+        public bool EstAReviser()
+        {
+            bool resultat = false;
+
+            // premier cas les jours
+
+            // calcul de la difference de temps entre aujourd'hui et la ldate de la derniere revision
+            TimeSpan dureeDepuisDerniereRevision = DateTime.Now - this.DateDerniereRevision;
+
+            if(dureeDepuisDerniereRevision.TotalDays > this.LeType.NbJoursEntreRevisions)
+
+
+            return resultat;
+        }
 
         #endregion
     }

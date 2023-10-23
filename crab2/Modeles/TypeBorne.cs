@@ -16,7 +16,7 @@ namespace crab2.Modeles
         public static List<TypeBorne> CollClasse = new List<TypeBorne>();
 
         private int _codeTypeBorne;
-        private TimeSpan _dureeRevision;  // Assuming it's a duration
+        private int _dureeRevision;  // Assuming it's a duration
         private int _nbJoursEntreRevisions;
         private int _nbUnitesEntreRevisions;
 
@@ -24,7 +24,7 @@ namespace crab2.Modeles
 
         #region Constructeurs
 
-        public TypeBorne(int codeTypeBorne, TimeSpan dureeRevision, int nbJoursEntreRevisions, int nbUnitesEntreRevisions)
+        public TypeBorne(int codeTypeBorne, int dureeRevision, int nbJoursEntreRevisions, int nbUnitesEntreRevisions)
         {
             _codeTypeBorne = codeTypeBorne;
             _dureeRevision = dureeRevision;
@@ -39,7 +39,7 @@ namespace crab2.Modeles
         #region Getters/Setters
 
         public int CodeTypeBorne { get => _codeTypeBorne; set => _codeTypeBorne = value; }
-        public TimeSpan DureeRevision { get => _dureeRevision; set => _dureeRevision = value; }
+        public int DureeRevision { get => _dureeRevision; set => _dureeRevision = value; }
         public int NbJoursEntreRevisions { get => _nbJoursEntreRevisions; set => _nbJoursEntreRevisions = value; }
         public int NbUnitesEntreRevisions { get => _nbUnitesEntreRevisions; set => _nbUnitesEntreRevisions = value; }
 
